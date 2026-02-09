@@ -48,14 +48,6 @@ const routes = [
     }
   },
   {
-    path: '/history',
-    name: 'history',
-    component: () => import('../views/HistoryView/HistoryView.vue'),
-    meta: {
-      title: '阅读历史 | 技术宅-改变未来'
-    }
-  },
-  {
     path: '/404',
     name: '404',
     component: () => import('../views/404View.vue'),
