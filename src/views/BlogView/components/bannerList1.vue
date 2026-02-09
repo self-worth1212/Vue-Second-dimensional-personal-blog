@@ -24,6 +24,7 @@
 
 <script>
 import { slider, slideritem } from "vue-concise-slider";
+import { addToHistory } from "@/utils/readingHistory.js";
 
 export default {
   components: { slider, slideritem },
@@ -31,6 +32,7 @@ export default {
     return {
       someList: [
         {
+          id: "vue-001",
           html: "Vue入门到入土",
           athuer: "chaichai",
           creatTime: "2021-10-19",
@@ -41,6 +43,7 @@ export default {
           },
         },
         {
+          id: "vue-002",
           html: "Vue框架详解",
           athuer: "chaichai",
           creatTime: "2021-10-19",
@@ -52,6 +55,7 @@ export default {
           },
         },
         {
+          id: "vue-003",
           html: "Vue个人博客案例",
           athuer: "chaichai",
           creatTime: "2021-10-19",
@@ -77,6 +81,17 @@ export default {
       slider(data) {
         console.log(data,'silder1');
       },
+      clickSlider(item, index) {
+        // 记录阅读历史
+        const article = {
+          id: item.id,
+          title: item.html,
+          cover: item.style.background.replace('url("', '').replace('")', ''),
+          path: '/blog'
+        };
+        addToHistory(article);
+        this.$message.success(`已记录阅读: ${item.html}`);
+      }
   },
 };
 </script>
