@@ -29,6 +29,7 @@
           >
             <el-menu-item index="about">首页</el-menu-item>
             <el-menu-item index="blog">博客</el-menu-item>
+            <el-menu-item index="history">阅读历史</el-menu-item>
             <el-menu-item index="back">后台</el-menu-item>
             <el-submenu index="2">
               <template slot="title">友链</template>
